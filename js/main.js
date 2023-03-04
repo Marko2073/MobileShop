@@ -730,13 +730,11 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
     let korpa=dohvatanje("korpa")
     var korpaDiv=document.querySelector(".korpaIspis");
     var korpaHead=document.querySelector(".korpaHead");
-    var korpaFooter=document.querySelector(".korpaFooter");
     let html="";
     let idK=0;
     var totalCena=0;
     if(korpa.length==0){
-        korpaHead.innerHTML=html;
-        korpaFooter.innerHTML="";
+        korpaDiv.innerHTML=html;
     }
     else{
 
@@ -748,7 +746,7 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
 
     <th>Price</th>
     <th>Remove</th>
-    </tr>`;
+    </tr>`
     for(let i of proizvodi){
         for(let j of korpa){
             if(i.id==j.id)
@@ -784,25 +782,9 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
         }
     }
     }
-    setTimeout(() => {
-        document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
+    document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
     ubacivanje("total", totalCena)
-    }, 1000);
-    
     korpaDiv.innerHTML=html;
-    korpaFooter.innerHTML=`<td class="invert"></td>
-    <td class="invert-image"></td>
-    
-    <td class="invert">
-        
-    </td>
-    <td class="invert"></td>
-    <td class="invert" id="sirina"><span id="TotalCena">Total :</span></td>
-    <td class="invert">
-        <div class="rem">
-            <div class="closeall"><button id="BrisanjeSvega">Remove all</button></div>
-        </div>
-    </td>`;
     }
     var korpa=dohvatanje("korpa");
     ispisProizvodaKorpa();
