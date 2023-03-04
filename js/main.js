@@ -214,6 +214,7 @@ function filtrirajPoNazivu(proizvodi){
 }   
 function promena(){
     var proizvodi = dohvatanje("sviPoizvodi");
+    console.log(proizvodi);
     if(window.location.pathname=="/MobileShop/index.html"){
         
            proizvodi= proizvodi.filter(product=>product.new==true);
