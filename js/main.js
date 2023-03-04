@@ -735,18 +735,19 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
     var totalCena=0;
     if(korpa.length==0){
         korpaDiv.innerHTML=html;
+        korpaHead.innerHTML=html
     }
     else{
+        korpaHead.innerHTML=`<tr>
+        <th>SL No.</th>
+        <th>Product</th>
+        <th>Quality</th>
+        <th>Product Name</th>
 
-    korpaHead.innerHTML=`<tr>
-    <th>SL No.</th>
-    <th>Product</th>
-    <th>Quality</th>
-    <th>Product Name</th>
-
-    <th>Price</th>
-    <th>Remove</th>
+        <th>Price</th>
+        <th>Remove</th>
     </tr>`
+    
     for(let i of proizvodi){
         for(let j of korpa){
             if(i.id==j.id)
