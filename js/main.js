@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
         var element = document.getElementById("all");
         element.style.opacity = 1;
         element.style.transition = "opacity 1s ease-in-out";
-      }, 2000)
+      }, 1500)
 });
 ajaxCallBack("menu.json", function(rezultat){
     ispisNav(rezultat);
