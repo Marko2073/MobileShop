@@ -736,7 +736,7 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
     var totalCena=0;
     if(korpa.length==0){
         korpaHead.innerHTML=html;
-        korpaFooter.innerHTML=""
+        korpaFooter.innerHTML="";
     }
     else{
 
@@ -748,7 +748,7 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
 
     <th>Price</th>
     <th>Remove</th>
-    </tr>`
+    </tr>`;
     for(let i of proizvodi){
         for(let j of korpa){
             if(i.id==j.id)
@@ -799,7 +799,7 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
         <div class="rem">
             <div class="closeall"><button id="BrisanjeSvega">Remove all</button></div>
         </div>
-    </td>`
+    </td>`;
     }
     var korpa=dohvatanje("korpa");
     ispisProizvodaKorpa();
