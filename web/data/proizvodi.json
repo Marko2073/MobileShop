@@ -1,0 +1,469 @@
+[
+    {
+      "id":1,
+      "model": "iPhone 12 Pro Max",
+      "new":true,
+      "brandId": 1,
+      "popustId": 1,
+      "ramId":5,
+      "ocenaid":5,
+      "cena": 
+        {
+          "stara":1000,
+          "nova": 999
+        }
+      ,
+      "memorija": "512GB",
+      "boja": "Black",
+      "ekran": "6.7 inch Super Retina XDR",
+      "kamera": "Triple 12MP camera system",
+      "sistem": "iOS 14",
+      "procesor": "A14 Bionic chip",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":0
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":0
+      }
+      ],
+      "slike":{
+          "slika1":"images/b_2_150x300.jpg",
+          "alt":"Ajfon-12-Pro-Max"
+      }
+    },
+    {
+      "id":2,
+      "model": "iPhone 11",
+      "new":true,
+      "brandId": 1,
+      "popustId": 2,
+      "ramId":4,
+      "ocenaid":4,
+      "cena": 
+        {
+          "stara":800,
+          "nova": 799
+        }
+      ,
+      "memorija": "256GB",
+      "boja": "Space Gray",
+      "ekran": "5.8 inch Super Retina XDR",
+      "kamera": "Triple 12MP camera system",
+      "sistem": "iOS 13",
+      "procesor": "A13 Bionic chip",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":1
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/iphone11256.jpg",
+          "alt":"Ajfon-11-Pro"
+      }
+    },
+    {
+      "id":3,
+      "model": "iPhone 13 Pro",
+      "new":true,
+      "brandId": 1,
+      "popustId": 2,
+      "ramId":4322,
+      "ocenaid":4,
+      "cena": 
+        {
+          "stara":1200,
+          "nova": 1100
+        }
+        ,
+        "memorija": "256GB",
+        "boja": "Rose gold",
+        "ekran": "5.8 inch Super Retina XDR display",
+        "kamera": "Triple 12MP camera system",
+        "sistem": "iOS 14",
+        "procesor": "A14 Bionic chip",
+        "specifikacije":[
+        {
+            "ime":"Otisak prsta",
+            "vrednost":1
+        },
+        {
+            "ime":"Punjac",
+            "vrednost":0
+        },
+        {
+            "ime":"Slusalice",
+            "vrednost":0
+        }
+        ],
+        "slike":{
+            "slika1":"images/iphone13pro.jpg",
+            "alt":"Ajfon-13-Pro"
+        }
+    },
+    {
+      "id":4,
+      "model": "iPhone 13 Pro Max",
+      "new":false,
+      "brandId": 1,
+      "popustId": 2,
+      "ramId":3,
+      "ocenaid":4,
+      "cena": 
+        {
+          "stara":800,
+          "nova": 799
+        }
+      ,
+      "memorija": "256GB",
+      "boja": "Space Gray",
+      "ekran": "5.8 inch Super Retina XDR display",
+      "kamera": "Triple 12MP camera system",
+      "sistem": "iOS 13",
+      "procesor": "A13 Bionic chip",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":1
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/iphone13promax.jpg",
+          "alt":"Ajfon-13-Pro-Max"
+      }
+    },
+    {
+      "id":5,
+      "model": "iPhone 14 Pro Max",
+      "new":false,
+      "brandId": 1,
+      "popustId": 3,
+      "ramId":5,
+      "ocenaid":1,
+      "cena": 
+        {
+          "stara":1400,
+          "nova": 400
+        }
+      ,
+      "memorija": "128GB",
+      "boja": "Product red",
+      "ekran": "6.7 inch Super Retina XDR display",
+      "kamera": "Double 12MP camera system",
+      "sistem": "iOS 15",
+      "procesor": "A15 Bionic chip",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":0
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/iphone14promax.jpg",
+          "alt":"Ajfon-14-Pro-Max"
+      }
+    },
+    {
+      "id":6,
+      "model": "iPhone 12 mini",
+      "new":false,
+      "brandId": 1,
+      "popustId": 3,
+      "ramId":4,
+      "ocenaid":1,
+      "cena": 
+        {
+          "stara":1400,
+          "nova": 1380
+        }
+      ,
+      "memorija": "128GB",
+      "boja": "Product red",
+      "ekran": "5.4 inch Super Retina XDR display",
+      "kamera": "Double 12MP camera system",
+      "sistem": "iOS 14",
+      "procesor": "A13 Bionic chip",
+      "specifikacije":[
+      {
+          "ime":"Apple watch",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":0
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/iphone12mini.jpg",
+          "alt":"Ajfon-12-Pro-Max"
+      }
+    },
+    {
+      "id":7,
+      "model": "Samsung Galaxy S22 Ultra",
+      "new":false,
+      "brandId": 2,
+      "popustId": 0,
+      "ramId": 5,
+      "ocenaid": 5,
+      "cena":
+      {
+      "stara": 1200,
+      "nova": 1099
+      },
+      "memorija": "512GB",
+      "boja": "Phantom Black",
+      "ekran": "6.8 inch Dynamic AMOLED 2X display",
+      "kamera": "108MP quad rear camera",
+      "sistem": "Android 13",
+      "procesor": "Exynos 2100",
+      "specifikacije":[
+      {
+      "ime":"Galaxy watch 4",
+      "vrednost":1
+      },
+      {
+      "ime":"Charger",
+      "vrednost":0
+      },
+      {
+      "ime":"Headphones",
+      "vrednost":0
+      }
+      ],
+      "slike":{
+      "slika1":"images/s22ultra.jpg",
+      "alt":"Samsung-Galaxy-S21-Ultra"
+      }    
+    },
+    {
+      "id":8,
+      "model": "Xiaomi 9T",
+      "new":false,
+      "brandId": 3,
+      "popustId": 2,
+      "ramId":5,
+      "ocenaid":3,
+      "cena": 
+        {
+          "stara":800,
+          "nova": 720
+        }
+      ,
+      "memorija": "64GB",
+      "boja": "Gray",
+      "ekran": "6.39 inch Super Retina XDR display",
+      "kamera": "Triple 48MP camera",
+      "sistem": "Android 13",
+      "procesor": "A13 Bionic chip",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":1
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/xiaomi9t.png",
+          "alt":"Xiaomi 9t"
+      }
+    },
+    {
+      "id":9,
+      "model": "Motorola moto g22",
+      "new":false,
+      "brandId": 4,
+      "popustId": 2,
+      "ramId":3,
+      "ocenaid":2,
+      "cena": 
+        {
+          "stara":190,
+          "nova": 165
+        }
+      ,
+      "memorija": "64GB",
+      "boja": "Black",
+      "ekran": "6.5 inch Amoled display",
+      "kamera": "%0MP camera system",
+      "sistem": "Android 10",
+      "procesor": "Snapdragon 5665",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":0
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":1
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":0
+      }
+      ],
+      "slike":{
+          "slika1":"images/motorolag22.png",
+          "alt":"Motorolag22"
+      }
+    },
+    {
+      "id":10,
+      "model": "Nokia XR20 5G",
+      "new":true,
+      "brandId": 5,
+      "popustId": 2,
+      "ramId":5,
+      "ocenaid":5,
+      "cena": 
+        {
+          "stara":700,
+          "nova": 640
+        }
+      ,
+      "memorija": "128GB",
+      "boja": "Black",
+      "ekran": "6.67 inch Amoled display",
+      "kamera": "Double 48MP camera system",
+      "sistem": "Android 12",
+      "procesor": "Exynos 577",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":1
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":0
+      }
+      ],
+      "slike":{
+          "slika1":"images/nokiaxr20.png",
+          "alt":"NokiaXR20"
+      }
+    },
+    {
+      "id":11,
+      "model": "HONOR 70",
+      "new":false,
+      "brandId": 6,
+      "popustId": 4,
+      "ramId":5,
+      "ocenaid":2,
+      "cena": 
+        {
+          "stara":800,
+          "nova": 560
+        }
+      ,
+      "memorija": "256GB",
+      "boja": "white",
+      "ekran": "6.67 inch XDR display",
+      "kamera": "Triple 54MP camera system",
+      "sistem": "Android 13 UI 5.1",
+      "procesor": "snapdragon 6700",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":0
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/honor70.png",
+          "alt":"Honor70"
+      }
+    },
+    {
+      "id":12,
+      "model": "XIAOMI Redmi 10 2022",
+      "new":true,
+      "brandId": 3,
+      "popustId": 3,
+      "ramId":3,
+      "ocenaid":2,
+      "cena": 
+        {
+          "stara":190,
+          "nova": 140
+        }
+      ,
+      "memorija": "64GB",
+      "boja": "Blue",
+      "ekran": "6.5 inch",
+      "kamera": "50MP camera system",
+      "sistem": "Android 13",
+      "procesor": "Exinos 690",
+      "specifikacije":[
+      {
+          "ime":"Otisak prsta",
+          "vrednost":1
+      },
+      {
+          "ime":"Punjac",
+          "vrednost":1
+      },
+      {
+          "ime":"Slusalice",
+          "vrednost":1
+      }
+      ],
+      "slike":{
+          "slika1":"images/xiaomi102022.jpg",
+          "alt":"Xiaomi 10"
+      }
+    }
+]
