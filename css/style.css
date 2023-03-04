@@ -3198,7 +3198,7 @@ header
   color: #fff;
 }
 .navbar #logo span{
-  color:rgb(237, 86, 59);
+  color:#F45C5D;
 }
 .navbar ul li a{
     text-decoration: none;
@@ -3383,14 +3383,14 @@ header
   }
   
   #form button {
-    background-color: #369FFF;
+    background-color: #F45C5D;
     color: #FFF;
-    border: 1px solid #369FFF;
+    border: 1px solid #F45C5D;
   }
   
   #form button:hover {
     background-color: #FFF;
-    color: #369FFF;
+    color: #F45C5D;
   }
   
   
@@ -3441,8 +3441,9 @@ header
 
 
   .toggleButton1 {
-    background-color: #fff;
+    background-color: #F45C5D;
     border: 1px solid #e1e1e1;
+    border-radius: 3px;
     color: #666;
     font-size: 14px;
     font-weight: 600;
