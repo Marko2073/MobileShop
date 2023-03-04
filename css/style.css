@@ -3538,3 +3538,6 @@ header
     display: flex;
     justify-content: center;
   }
+  .centrirana{
+    margin:0px auto;
+  }
