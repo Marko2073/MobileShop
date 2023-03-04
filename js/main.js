@@ -213,8 +213,11 @@ function filtrirajPoNazivu(proizvodi){
     
 }   
 function promena(){
-    let proizvodi = dohvatanje("sviProizvodi");
-
+    let proizvodi = dohvatanje("sviPoizvodi");
+    if(window.location.pathname=="/MobileShop/index.html"){
+        
+           proizvodi= proizvodi.filter(product=>product.new==true);
+    }
     proizvodi= filtriranje(proizvodi, "brend", "brandId");
     proizvodi= filtriranje(proizvodi, "popust", "popustId");
     proizvodi= filtriranjeCena(proizvodi);
