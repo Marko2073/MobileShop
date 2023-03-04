@@ -469,85 +469,8 @@ function AddedToCartModal(tip){
         }, 2000);   
     }
 }
-window.onload = function(){
-    let dugmici = document.querySelectorAll('.korpa')
-    console.log(dugmici);
-    
-    
-        dugmici.forEach(dugme => {
-            dugme.addEventListener('click',function(e){
-                e.preventDefault();
-                if(dohvatanje("korpa") != null){
-                let korpa = dohvatanje("korpa");
-                let br = 0;
-                for(let i of korpa){
-                if(i.id == this.getAttribute("data-proizvodid")){
-                    br++;
-                }
-                }
-                if(br > 0){
-                    AddedToCartModal()
-                }
-                else{
-                    korpa.push({"id": this.getAttribute("data-proizvodid"), "quantity":1});
-                    ubacivanje("korpa", korpa);
-                    
-                    AddedToCartModal("dodat")
-                    
-                }
-                
-                }
-            })
-        })
-    let chcD=document.querySelectorAll(".brand input");
-   
-    chcD.forEach(c => {
-        c.addEventListener("change",function(){
-            promena();
-        })
-        
-    });
-    let chc2=document.querySelectorAll(".popust input");
-    
-    chc2.forEach(c => {
-        c.addEventListener("change",function(){
-            promena();
-        })
-        
-    });
-    let chc=document.querySelectorAll(".cena input");
-    
-    chc.forEach(c => {
-        c.addEventListener("change",function(){
-            promena();
-        })
-        
-    });
-    let chc1=document.querySelectorAll(".ocena input");
-    
-    chc1.forEach(c => {
-        c.addEventListener("change",function(){
-            promena();
-        })
-        
-    });
-    document.querySelector("#search").addEventListener("keyup", function(){
-        promena();
-    })
 
-    $(document).on("change", "#ddlSort", promena);
-
-    const toggleButtons = document.querySelectorAll('.toggleButton1');
-
-    toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const productDetails = button.parentElement.querySelector('.product-details');
-        productDetails.classList.toggle('active');
-    });
-    });
-
-    }
-if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" )
+if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" ||  window.location.pathname=="/MobileShop/product.html")
 {
     
     ajaxCallBack("brend.json", function(rezultatBrend){
@@ -568,421 +491,112 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         ubacivanje("savRam",rezultatRam);
         
     })
-    ajaxCallBack("proizvodi.json", function(rezultatProizvoda){
-        var rez=[];
-        rezultatProizvoda.forEach(element => {
-            if(element.new){
-                rez.push(element);
-            }
-            
-            
-        });
-        ispisProizvoda(rez);
-        ubacivanje("sviProizvodi",rezultatProizvoda);
-    })
+    
     ajaxCallBack("sortiranje.json", function(rezultatSortiranje){
         kreirajPadajucuListu(rezultatSortiranje, "ddlSort", "Sortiranje", "sortiranje", "sort");
     })
-
-
-
-  
-
-function filtriranje(proizvodi, tip, filter)
-{
-    var filtriraniProizvodi;
-    var nizBrendova = [];
-    var pomocni_niz=[]
-    if(tip=="brend")
-    {
-        var DohvatiCHC= document.querySelectorAll(".brand input");
-        DohvatiCHC.forEach(c => {
-           
-            if(c.checked == true)
-            {
-                nizBrendova.push(c.value)
-            }
-           
-            });
-            if(nizBrendova.length == 0){
-            filtriraniProizvodi = proizvodi;    
-            }
-            else{
-                filtriraniProizvodi = proizvodi.filter(proizvod => nizBrendova.some(element => proizvod[filter] == element))  
-                
-            }
-      
-    }
-    var nizPopusta = [];
-    if(tip=="popust")
-    {
-        var DohvatiCHC= document.querySelectorAll(".popust input");
-        DohvatiCHC.forEach(c => {
-           
-            if(c.checked == true)
-            {
-                nizPopusta.push(c.value)
-            }
-           
-            });
-            if(nizPopusta.length == 0){
-            filtriraniProizvodi = proizvodi;    
-            }
-            else{
-                filtriraniProizvodi = proizvodi.filter(proizvod => nizPopusta.some(element => proizvod[filter] == element))  
-            }
-      
-    }
-    var nizOcena = [];
-    if(tip=="ocena")
-    {
-        var DohvatiCHC= document.querySelectorAll(".ocena input");
-        DohvatiCHC.forEach(c => {
-           
-            if(c.checked == true)
-            {
-                nizOcena.push(c.value)
-            }
-           
-            });
-            if(nizOcena.length == 0){
-            filtriraniProizvodi = proizvodi;    
-            }
-            else{
-                filtriraniProizvodi = proizvodi.filter(proizvod => nizOcena.some(element => proizvod[filter] == element))  
-            }
-    }
-    return filtriraniProizvodi;
-}
-function filtriranjeCena(proizvodi)
-{
-    var filtriraniProizvodi;
-    var nizCena = [];
-    
-    var DohvatiCHC= document.querySelectorAll(".cena input");
-    DohvatiCHC.forEach(c => {
-        if(c.checked == true)
-        {
-            nizCena.push(c.value)
-        }      
-    });
-        if(nizCena.length == 0){
-        filtriraniProizvodi = proizvodi;    
-        }
-        else{
-            var sortiraniNizCena=nizCena.sort(function(a,b){
-                return b-a;
-            })
-            filtriraniProizvodi = proizvodi.filter(proizvod => proizvod.cena.nova <= sortiraniNizCena[0])  
-        }
-    return filtriraniProizvodi;
-}
- function sortiranje(nizProizvoda){
-    let sortiraniProizvodi = [];
-    let izbor = $("#ddlSort").val();
-
-    if(izbor == "0"){
-        sortiraniProizvodi = nizProizvoda;
-    }
-    else{
-        sortiraniProizvodi = nizProizvoda.sort(function(a, b){
-            if(izbor == "cena-asc"){
-                return a.cena.nova - b.cena.nova;
-            }
-            if(izbor == "cena-desc"){
-                return b.cena.nova - a.cena.nova;
-            }
-            if(izbor == "naziv-asc"){
-                if(a.model < b.model){
-                    return -1;
-                }
-                else if(a.model > b.model){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-            }
-            if(izbor == "naziv-desc"){
-                if(a.model > b.model){
-                    return -1;
-                }
-                else if(a.model < b.model){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-            }   
-            if(izbor == "ocena"){
-                if(a.ocenaid > b.ocenaid){
-                    return -1;
-                }
-                else if(a.ocenaid < b.ocenaid){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-            } 
-        })
-    }
-    return sortiraniProizvodi;
-}
-function filtrirajPoNazivu(proizvodi){
-    let vrednostPolja = $("#search").val();
-    return proizvodi.filter(proizvod => proizvod.model.toLowerCase().includes(vrednostPolja.toLowerCase()));
-    
-}   
-function promena(){
-    let proizvodi = dohvatanje("sviProizvodi");
-
-    proizvodi= filtriranje(proizvodi, "brend", "brandId");
-    proizvodi= filtriranje(proizvodi, "popust", "popustId");
-    proizvodi= filtriranjeCena(proizvodi);
-    proizvodi= filtriranje(proizvodi, "ocena", "ocenaid");
-    proizvodi= sortiranje(proizvodi);
-    proizvodi= filtrirajPoNazivu(proizvodi);
-    ispisProizvoda(proizvodi);
-    const toggleButtons = document.querySelectorAll('.toggleButton1');
-    toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const productDetails = button.parentElement.querySelector('.product-details');
-        productDetails.classList.toggle('active');
-    });
-    });
-    let dugmici = document.querySelectorAll('.korpa')
-        dugmici.forEach(dugme => {
-            dugme.addEventListener('click',function(e){
-                e.preventDefault();
-                if(dohvatanje("korpa") != null){
-                let korpa = dohvatanje("korpa");
-                let br = 0;
-                for(let i of korpa){
-                if(i.id == this.getAttribute("data-proizvodid")){
-                    br++;
-                }
-                }
-                if(br > 0){
-                    alert("Vec postoji")
-                }
-                else{
-                    korpa.push({"id": this.getAttribute("data-proizvodid"), "quantity":1});
-                    ubacivanje("korpa", korpa);
+    if(window.location.pathname=="/MobileShop/index.html"){
+        ajaxCallBack("proizvodi.json", function(rezultatProizvoda){
+            var rez=[];
+            rezultatProizvoda.forEach(element => {
+                if(element.new){
+                    rez.push(element);
                 }
                 
-                }
-            })
+                
+            });
+            ispisProizvoda(rez);
+            ubacivanje("sviProizvodi",rezultatProizvoda);
         })
-}
-function kreirajPadajucuListu(niz, idListe, labela, classDiv){
-    let html = `<div class="form-group" id="red">
-        <label class="form-label">${labela}</label>
-        <select class="form-select" id="${idListe}">
-            <option value="0">Izaberite</option>`;
-            for(let obj of niz){
-                html += `<option value="${obj.vrednost}">${obj.naziv}</option>`  
-            }
-        html += `</select>
-    </div>`;
-
-    document.querySelector(`.${classDiv}`).innerHTML = html;
-}
-function ispisiNaziv(id, storage){
-    let nizLS = dohvatanje(storage);
-
-    let naziv = "";
-    for(let obj of nizLS){
-        if(obj.id == id){
-            naziv = obj.ime;
-            break;
         }
-    }
-    return naziv;
-
-}
-
-function ispisPopust(nizZaIspis){
-    let popust=document.querySelector(".popust");
-    let inputi = "";
-
-    for(let obj of nizZaIspis){
-        inputi += `<li>
-        <input type="checkbox" class="checked" value="${obj.id}">
-        <span class="span">${obj.ime}</span>
-        </li>`
-    }
-
-    popust.innerHTML = inputi;
-}
-function ispisCena(nizZaIspis){
-    let cena=document.querySelector(".cena");
-    let inputi = "";
-
-    for(let obj of nizZaIspis){
-        inputi += `<li>
-        <input type="checkbox" class="checked" value="${obj.cenaDo}">
-        <span class="span">Do: ${obj.cenaDo}€</span>
-        </li>`
-    }
-
-    cena.innerHTML = inputi;
-}
-function ispisBrendova(nizZaIspis){
-    let brendIspis=document.querySelector(".brand");
-    let inputi = "";
-
-    for(let obj of nizZaIspis){
-        inputi += `<li>
-        <input type="checkbox" name="Brendovi" class="checked" value="${obj.id}">
-        <span class="span">${ispisiNaziv(obj.id, "savBrend")}</span>
-        </li>`
-    }
-
-    brendIspis.innerHTML = inputi;
-}
-
-function ispisOcena(nizZaIspis){
-    let ocena=document.querySelector(".ocena");
-    let inputi = "";
-    inputi += `<li>`
-        var star=0;
-    for(let obj of nizZaIspis){
-        star++;
-        
-        for(let i=0;i<star;i++)
-        {
-            inputi+=`<i class="fas fa-star"></i>`
+        if(window.location.pathname=="/MobileShop/product.html"){
+            ajaxCallBack("proizvodi.json", function(rezultatProizvoda){
+                
+                ispisProizvoda(rezultatProizvoda);
+                ubacivanje("sviProizvodi",rezultatProizvoda);
+            })
         }
-        inputi += `
-        <input type="checkbox" name="Ocena" class="checked" value="${obj.id}">
-        
-        <span>${obj.zvezdice}</span></br>`  
-    }
-    inputi+= `</li>`;
-    ocena.innerHTML = inputi;
-}
 
-function ispisProizvoda(nizZaIspis){
-    let sviProizvodi=document.querySelector("#proizvodi");
-    let proizvod = "";
-    if(nizZaIspis.length==0)
-    {
-        proizvod+=`<p>nemaaaaa</p>`
-    }
-    else{
+        window.onload = function(){
+            let dugmici = document.querySelectorAll('.korpa')
+            console.log(dugmici);
+            
+            
+                dugmici.forEach(dugme => {
+                    dugme.addEventListener('click',function(e){
+                        e.preventDefault();
+                        if(dohvatanje("korpa") != null){
+                        let korpa = dohvatanje("korpa");
+                        let br = 0;
+                        for(let i of korpa){
+                        if(i.id == this.getAttribute("data-proizvodid")){
+                            br++;
+                        }
+                        }
+                        if(br > 0){
+                            AddedToCartModal()
+                        }
+                        else{
+                            korpa.push({"id": this.getAttribute("data-proizvodid"), "quantity":1});
+                            ubacivanje("korpa", korpa);
+                            
+                            AddedToCartModal("dodat")
+                            
+                        }
+                        
+                        }
+                    })
+                })
+            let chcD=document.querySelectorAll(".brand input");
+           
+            chcD.forEach(c => {
+                c.addEventListener("change",function(){
+                    promena();
+                })
+                
+            });
+            let chc2=document.querySelectorAll(".popust input");
+            
+            chc2.forEach(c => {
+                c.addEventListener("change",function(){
+                    promena();
+                })
+                
+            });
+            let chc=document.querySelectorAll(".cena input");
+            
+            chc.forEach(c => {
+                c.addEventListener("change",function(){
+                    promena();
+                })
+                
+            });
+            let chc1=document.querySelectorAll(".ocena input");
+            
+            chc1.forEach(c => {
+                c.addEventListener("change",function(){
+                    promena();
+                })
+                
+            });
+            document.querySelector("#search").addEventListener("keyup", function(){
+                promena();
+            })
         
-    
-    for(let obj of nizZaIspis){
-        var ocena="";
-        for(var i = 0;i<obj.ocenaid;i++)
-        {
-            ocena+=`<i class="fas fa-star"></i>`;
+            $(document).on("change", "#ddlSort", promena);
+        
+            const toggleButtons = document.querySelectorAll('.toggleButton1');
+        
+            toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productDetails = button.parentElement.querySelector('.product-details');
+                productDetails.classList.toggle('active');
+            });
+            });
+        
         }
-        var specIspis="";
-        for(var i of obj.specifikacije)
-        {
-            if(i.vrednost==1)
-            {
-                specIspis+=i.ime+"\n ";                   
-            }
-        }
-        if(obj.new){
-            var New ="NEW!"
-
-        
-        proizvod += `
-        <div class="col-md-4 product-men mt-5">
-            <div class="men-pro-item simpleCart_shelfItem">
-                <div class="men-thumb-item text-center">
-                    <div class="img-product">
-                    
-                        <div class="discount-sticker">${New}</div>
-                        <img src="${obj.slike.slika1}" alt="${obj.slike.alt}" class="initial-img">
-                    </div>
-                    
-                        
-                   
-                    <div class="OpisProizvoda">
-                    
-                        <div class="product-details">
-                            <p>${ispisiNaziv(obj.brandId, "savBrend")}-${obj.model}</p>
-                            <p>${obj.boja}-${obj.ekran}</p>
-                            <p>${ispisiNaziv(obj.ramId, "savRam")}/${obj.memorija}</p>
-                            <p>${obj.kamera}</p>
-                            <p>${obj.sistem}-${obj.procesor}</p>
-                            <p>${specIspis}</p>
-                            <p>${ocena}</p>
-                        </div>
-                    
-                        <input type="button" class="toggleButton1" value="About" />
-                    </div>
-                        
-                    
-                    
-                </div>
-                <div class="item-info-product text-center border-top mt-4">
-                    <div class="info-product-price my-2 similar-block">
-                    
-                        <span class="item_price">${obj.model}</span></br>
-                        <span class="item_price">${ispisiNaziv(obj.popustId, "savPopust")}  ${obj.cena.nova}</span>
-                        <del>${obj.cena.stara}</del>
-                    </div>
-                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                        <form action="" method="post">
-                        <button class="button btn korpa" data-proizvodid="${obj.id}">Add to cart</button>
-                        
-                        </form>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        `
-    }
 }
-    }
-    sviProizvodi.innerHTML = proizvod;
-    
-}
-  
-}
-if(window.location.pathname=="/MobileShop/product.html")
-{
-    
-    ajaxCallBack("brend.json", function(rezultatBrend){
-    ubacivanje("savBrend",rezultatBrend);
-    ispisBrendova(rezultatBrend);
-    })
-    ajaxCallBack("popust.json", function(rezultatPopust){
-        ispisPopust(rezultatPopust);
-        ubacivanje("savPopust",rezultatPopust);
-    })
-    ajaxCallBack("ocena.json", function(rezultatOcena){
-        ispisOcena(rezultatOcena);
-    })
-    ajaxCallBack("cena.json", function(rezultatCena){
-        ispisCena(rezultatCena);
-    })
-    ajaxCallBack("ram.json", function(rezultatRam){
-        ubacivanje("savRam",rezultatRam);
-        
-    })
-    ajaxCallBack("proizvodi.json", function(rezultatProizvoda){
-        
-        ispisProizvoda(rezultatProizvoda);
-        ubacivanje("sviProizvodi",rezultatProizvoda);
-    })
-    ajaxCallBack("sortiranje.json", function(rezultatSortiranje){
-        kreirajPadajucuListu(rezultatSortiranje, "ddlSort", "Sortiranje", "sortiranje", "sort");
-    })
 
-
-
-  
-
-
-}
 // Provea forme
 if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathname=="/MobileShop/checkout.html" )
 {
