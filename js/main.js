@@ -165,7 +165,7 @@ window.onload = function(){
     });
 
     }
-if(window.location.pathname=="/web/index.html" || window.location.pathname=="/web/" || window.location.pathname=="/web/product.html")
+if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" || window.location.pathname=="/MobileShop/product.html")
 {
     
     ajaxCallBack("brend.json", function(rezultatBrend){
@@ -570,7 +570,7 @@ function ispisProizvoda(nizZaIspis){
 
     
 }
-if(window.location.pathname=="/web/product.html")
+if(window.location.pathname=="/MobileShop/product.html")
 {
     
     ajaxCallBack("brend.json", function(rezultatBrend){
@@ -991,7 +991,7 @@ function ispisOcena(nizZaIspis){
     }
 }
 // Provea forme
-if(window.location.pathname=="/web/contact.html" || window.location.pathname=="/web/checkout.html" )
+if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathname=="/MobileShop/checkout.html" )
 {
     const fullName = document.getElementById('name');
 	const email = document.getElementById('email');
@@ -1122,7 +1122,7 @@ if(window.location.pathname=="/web/contact.html" || window.location.pathname=="/
 			}
 		});
 }
-if(window.location.pathname=="/web/checkout.html"){
+if(window.location.pathname=="/MobileShop/checkout.html"){
     
     function ispisProizvodaKorpa(){
     var proizvodi=dohvatanje("sviProizvodi");
