@@ -11,8 +11,7 @@ function ajaxCallBack(imeFajla, ispis){
 }
 function ubacivanje(naziv, vrednost){
     localStorage.setItem(naziv, JSON.stringify(vrednost));
-    }
-    
+}
 function dohvatanje(naziv){
     return JSON.parse(localStorage.getItem(naziv));
 }
@@ -49,7 +48,7 @@ window.addEventListener("load", function () {
         element.style.opacity = 1;
         element.style.transition = "opacity 1s ease-in-out";
       }, 2000)
-  });
+});
 ajaxCallBack("menu.json", function(rezultat){
     ispisNav(rezultat);
 })
@@ -445,13 +444,6 @@ function ispisProizvoda(nizZaIspis){
     }
     sviProizvodi.innerHTML = proizvod;
 }
-
-
-
-
-
-
-
 function AddedToCartModal(tip){
     let small_modal=document.querySelector(".small-modal");
     let small_modal_value=document.querySelector(".small-modal-content p");
@@ -474,7 +466,6 @@ function AddedToCartModal(tip){
         }, 2000);   
     }
 }
-
 if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" ||  window.location.pathname=="/MobileShop/product.html")
 {
     
@@ -601,8 +592,6 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         
         }
 }
-
-// Provea forme
 if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathname=="/MobileShop/checkout.html" )
 {
     const fullName = document.getElementById('name');
@@ -792,8 +781,8 @@ function ispisBroj(korpa){
     broj.innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
     <span>${br} Products</span></h4>`
 }
-    var korpa=dohvatanje("korpa");
-    ispisBroj(korpa);
+var korpa=dohvatanje("korpa");
+ispisBroj(korpa);
 
 $(document).on("click",".value-plus",dodaj)
 $(document).on("click",".value-minus",oduzmi)
@@ -828,7 +817,6 @@ function dodaj(){
 
 
 }
-
 function oduzmi(){
     var quantity=this.parentElement.children[1].children[0].innerHTML;
     quantity=parseInt(quantity);        
@@ -893,6 +881,3 @@ BrisanjeKorpa("#okModal");
 
 
 }
-
-
-
