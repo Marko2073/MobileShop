@@ -784,8 +784,11 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
         }
     }
     }
-    document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
+    setTimeout(() => {
+        document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
     ubacivanje("total", totalCena)
+    }, 1000);
+    
     korpaDiv.innerHTML=html;
     korpaFooter.innerHTML=`<td class="invert"></td>
     <td class="invert-image"></td>
