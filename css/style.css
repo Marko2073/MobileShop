@@ -3540,4 +3540,10 @@ header
   }
   .centrirana{
     margin:0px auto;
+    height: 230px;
+
+  }
+  .centrirana img{
+    margin:0px auto;
+    
   }
