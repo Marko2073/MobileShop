@@ -868,12 +868,14 @@ function brisanje(){
     
 }
 function BrisanjeKorpa(div){
-$(div).on("click",function(){
+$(div).on("click",function(e){
+    e.preventDefault();
     var prazno=[];
     ubacivanje("korpa",prazno);
     var korpa=dohvatanje("korpa");
     ispisBroj(korpa);
     ispisProizvodaKorpa();
+    location.reload();
 })
 }
 BrisanjeKorpa("#BrisanjeSvega");
