@@ -452,9 +452,8 @@ function AddedToCartModal(tip){
         small_modal_value.textContent="You have added the product to the cart"
         small_modal.classList.add("d-block");
     setTimeout(() => {
-        small_modal.classList.remove("d-block");
-        
-    }, 2000);
+        small_modal.classList.remove("d-block"); 
+    }, 1800);
 
     }
     else{
@@ -463,7 +462,62 @@ function AddedToCartModal(tip){
         setTimeout(() => {
             small_modal.classList.remove("d-block");
             
-        }, 2000);   
+        }, 1800);   
+    }
+}
+function ispisProizvodaKorpa(){
+
+    var proizvodi=dohvatanje("sviProizvodi");
+    let korpa=dohvatanje("korpa")
+    var korpaDiv=document.querySelector(".korpaIspis");
+    let html="";
+    let idK=0;
+    var totalCena=0;
+    if(korpa.length==0)
+    {
+        document.querySelector(".tableFooter").innerHTML="";
+        document.querySelector(".tableHead").innerHTML="";
+    }
+    else if(korpa.length>0){
+    for(let i of proizvodi){
+        for(let j of korpa){
+            if(i.id==j.id)
+            {
+                totalCena+=i.cena.nova*j.quantity;
+                html+=`<tr class="rem1">
+                <td class="invert">${++idK}</td>
+                <td class="invert-image">
+                    <a href="single.html">
+                        <img src="${i.slike.slika1}" alt="${i.slike.alt}" class="img-responsive">
+                    </a>
+                </td>
+                <td class="invert">
+                    <div class="quantity">
+                        <div class="quantity-select">
+                            <div class="entry value-minus" data-id="${i.id}">&nbsp;</div>
+                            <div class="entry value">
+                                <span>${j.quantity}</span>
+                            </div>
+                            <div class="entry value-plus" data-id="${i.id}">&nbsp;</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="invert">${i.model}</td>
+                <td class="invert" id="sirina"><span class="ukupnaCena">${i.cena.nova*j.quantity}$</span></td>
+                <td class="invert">
+                    <div class="rem">
+                        <div class="close1" data-closeid="${i.id}"> </div>
+                    </div>
+                </td>
+            </tr>`;
+            }
+        }
+    }
+
+    document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
+    ubacivanje("total", totalCena)
+    
+    korpaDiv.innerHTML=html;
     }
 }
 if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" ||  window.location.pathname=="/MobileShop/product.html")
@@ -514,9 +568,11 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         }
 
         window.onload = function(){
-            let dugmici = document.querySelectorAll('.korpa')
-            console.log(dugmici);
+            setTimeout(() => {
+                let dugmici = document.querySelectorAll('.korpa')
+            }, 1000);
             
+            console.log(dugmici);
             
                 dugmici.forEach(dugme => {
                     dugme.addEventListener('click',function(e){
@@ -735,68 +791,8 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			
 		});
 }
-
-
-function ispisProizvodaKorpa(){
-
-    var proizvodi=dohvatanje("sviProizvodi");
-    let korpa=dohvatanje("korpa")
-    var korpaDiv=document.querySelector(".korpaIspis");
-    let html="";
-    let idK=0;
-    var totalCena=0;
-    if(korpa.length==0)
-    {
-        document.querySelector(".tableFooter").innerHTML="";
-        document.querySelector(".tableHead").innerHTML="";
-    }
-    else if(korpa.length>0){
-    for(let i of proizvodi){
-        for(let j of korpa){
-            if(i.id==j.id)
-            {
-                totalCena+=i.cena.nova*j.quantity;
-                html+=`<tr class="rem1">
-                <td class="invert">${++idK}</td>
-                <td class="invert-image">
-                    <a href="single.html">
-                        <img src="${i.slike.slika1}" alt="${i.slike.alt}" class="img-responsive">
-                    </a>
-                </td>
-                <td class="invert">
-                    <div class="quantity">
-                        <div class="quantity-select">
-                            <div class="entry value-minus" data-id="${i.id}">&nbsp;</div>
-                            <div class="entry value">
-                                <span>${j.quantity}</span>
-                            </div>
-                            <div class="entry value-plus" data-id="${i.id}">&nbsp;</div>
-                        </div>
-                    </div>
-                </td>
-                <td class="invert">${i.model}</td>
-                <td class="invert" id="sirina"><span class="ukupnaCena">${i.cena.nova*j.quantity}$</span></td>
-                <td class="invert">
-                    <div class="rem">
-                        <div class="close1" data-closeid="${i.id}"> </div>
-                    </div>
-                </td>
-            </tr>`;
-            }
-        }
-    }
-
-    document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
-    ubacivanje("total", totalCena)
-    
-    korpaDiv.innerHTML=html;
-    }
-    }
-if(window.location.pathname=="/MobileShop/checkout.html"){
-    
-    
+if(window.location.pathname=="/MobileShop/checkout.html"){  
 ispisProizvodaKorpa();
-
 function ispisBroj(korpa){
     var korpa=dohvatanje("korpa")
     var broj= document.querySelector(".brojProizvoda");
@@ -806,10 +802,8 @@ function ispisBroj(korpa){
 }
 var korpa=dohvatanje("korpa");
 ispisBroj(korpa);
-
 $(document).on("click",".value-plus",dodaj)
 $(document).on("click",".value-minus",oduzmi)
-
 function dodaj(){
     var korpa=dohvatanje("korpa");
     var quantity=this.parentElement.children[1].children[0].innerHTML;
