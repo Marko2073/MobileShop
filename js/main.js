@@ -709,14 +709,10 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			checkMessage();
 			checkCheckbox();
             checkChange();
-			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc) {
+			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc && korpa.length!=0) {
 				var okModal = document.getElementById("okModal");
 				var modal = document.getElementById("myModal");
-                if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length===0)
-                {
-                    console.log("nemogucea")
-                }
-                else{
+                
 				modal.style.display = "block";
 
 				okModal.onclick = function () {
@@ -724,7 +720,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					setTimeout("location.reload(true);", 0);
 				};
             }
-			}
+			
 		});
 }
 if(window.location.pathname=="/MobileShop/checkout.html"){
