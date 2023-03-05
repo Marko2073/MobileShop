@@ -778,11 +778,10 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
     ubacivanje("total", totalCena)
     korpaDiv.innerHTML=html;
     }
-    var korpa=dohvatanje("korpa");
     ispisProizvodaKorpa();
 
 function ispisBroj(korpa){
-    
+    var korpa=dohvatanje("korpa")
     var broj= document.querySelector(".brojProizvoda");
     var br=korpa.length;
     broj.innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
