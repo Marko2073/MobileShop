@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
         var element = document.getElementById("all");
         element.style.opacity = 1;
         element.style.transition = "opacity 1s ease-in-out";
-      }, 1500)
+      }, 1000)
 });
 ajaxCallBack("menu.json", function(rezultat){
     ispisNav(rezultat);
@@ -883,19 +883,12 @@ function brisanje(){
     
 }
 function BrisanjeKorpa(div){
-$(div).on("click",function(e){
-    e.preventDefault();
+$(div).on("click",function(){
     ubacivanje("korpa",[]);
     document.querySelector("#tabelaKorpa").innerHTML="";
     document.querySelector(".brojProizvoda").innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
     <span>0 Products</span></h4>`;
     location.reload(true);
-    setTimeout(function () {
-        preloader.classList.add("preloader-finish");
-        var element = document.getElementById("all");
-        element.style.opacity = 1;
-        element.style.transition = "opacity 1s ease-in-out";
-      }, 0)
    
     
     
