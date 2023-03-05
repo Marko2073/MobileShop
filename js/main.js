@@ -890,6 +890,12 @@ $(div).on("click",function(e){
     document.querySelector(".brojProizvoda").innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
     <span>0 Products</span></h4>`;
     location.reload(true);
+    setTimeout(function () {
+        preloader.classList.add("preloader-finish");
+        var element = document.getElementById("all");
+        element.style.opacity = 1;
+        element.style.transition = "opacity 1s ease-in-out";
+      }, 0)
    
     
     
