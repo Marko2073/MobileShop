@@ -723,9 +723,9 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			
 		});
 }
-if(window.location.pathname=="/MobileShop/checkout.html"){
-    
-    function ispisProizvodaKorpa(){
+
+
+function ispisProizvodaKorpa(){
 
     var proizvodi=dohvatanje("sviProizvodi");
     let korpa=dohvatanje("korpa")
@@ -773,12 +773,17 @@ if(window.location.pathname=="/MobileShop/checkout.html"){
             }
         }
     }
-}
+
     document.getElementById("TotalCena").innerHTML= "Total: "+totalCena+"$";
     ubacivanje("total", totalCena)
+    
     korpaDiv.innerHTML=html;
     }
-    ispisProizvodaKorpa();
+    }
+if(window.location.pathname=="/MobileShop/checkout.html"){
+    
+    
+ispisProizvodaKorpa();
 
 function ispisBroj(korpa){
     var korpa=dohvatanje("korpa")
@@ -872,7 +877,7 @@ $(div).on("click",function(e){
     var prazno=[];
     ubacivanje("korpa",prazno);
     document.querySelector("#tabelaKorpa").innerHTML="";
-    location.reload();
+    
 })
 }
 BrisanjeKorpa("#BrisanjeSvega");
