@@ -710,7 +710,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			checkCheckbox();
             checkChange();
 			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc && korpa.length!=0) {
-				var okModal = document.getElementById("okModal");
+				var okModal = document.getElementById("okModal #uspesno");
 				var modal = document.getElementById("myModal");
                 
 				modal.style.display = "block";
@@ -719,6 +719,16 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					modal.style.display = "none";
 					setTimeout("location.reload(true);", 0);
 				};
+            }
+            else{
+                var okModal = document.getElementById("okModal #greska");
+				var modal = document.getElementById("myModal");
+                
+				modal.style.display = "block";
+
+				okModal.onclick = function () {
+					modal.style.display = "none";
+					setTimeout("location.reload(true);", 0);
             }
 			
 		});
