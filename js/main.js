@@ -875,7 +875,11 @@ function BrisanjeKorpa(div){
 $(div).on("click",function(){
     ubacivanje("korpa",[]);
     document.querySelector("#tabelaKorpa").innerHTML="";
-    ispisBroj(dohvatanje("korpa"));
+    
+    var broj= document.querySelector(".brojProizvoda");
+   
+    broj.innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
+    <span>0 Products</span></h4>`
     
 })
 }
