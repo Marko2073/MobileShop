@@ -720,6 +720,17 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					setTimeout("location.reload(true);", 0);
 				};
             }
+            else{
+                var okModal = document.getElementById("okModal2");
+				var modal = document.getElementById("myModal2");
+                
+				modal.style.display = "block";
+
+				okModal.onclick = function () {
+					modal.style.display = "none";
+					setTimeout("location.reload(true);", 0);
+				};
+            }
 			
 		});
 }
