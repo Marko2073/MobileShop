@@ -872,7 +872,7 @@ function brisanje(){
     document.querySelector("#tabelaKorpa").innerHTML="";
     document.querySelector(".brojProizvoda").innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
     <span>0 Products</span></h4>`;
-    location.reload();
+    location.reload(true);
 
     }
     else{
@@ -888,7 +888,7 @@ $(div).on("click",function(){
     document.querySelector("#tabelaKorpa").innerHTML="";
     document.querySelector(".brojProizvoda").innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
     <span>0 Products</span></h4>`;
-    location.reload();
+    location.reload(true);
    
     
     
