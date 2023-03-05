@@ -701,7 +701,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
     change.addEventListener('blur', checkChange);
 
 	//Submit check
-
+    var korpa=dohvatanje("korpa")
 	addEventListener('submit', (e) => {
 			e.preventDefault();
 			checkName();
@@ -714,7 +714,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 				var modal = document.getElementById("myModal");
                 if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0)
                 {
-                    console.log("nemoguce")
+                    console.log("nemogucea")
                 }
                 else{
 				modal.style.display = "block";
