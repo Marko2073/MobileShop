@@ -871,10 +871,7 @@ $(div).on("click",function(e){
     e.preventDefault();
     var prazno=[];
     ubacivanje("korpa",prazno);
-    var korpa=dohvatanje("korpa");
-    ispisBroj(korpa);
-    ispisProizvodaKorpa();
-    document.querySelector("#tabelaKorpa").remove();
+    document.querySelector("#tabelaKorpa").innerHTML="";
     location.reload();
 })
 }
