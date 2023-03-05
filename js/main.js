@@ -729,7 +729,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 				okModal.onclick = function () {
 					modal.style.display = "none";
 					setTimeout("location.reload(true);", 0);
-                    window.location.replace("https://marko2073.github.io/MobileShop/product.html");
+                    window.location.href = "https://marko2073.github.io/MobileShop/product.html";
 				};
             }
 			
