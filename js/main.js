@@ -875,6 +875,7 @@ $(div).on("click",function(e){
     ispisBroj(korpa);
     ispisProizvodaKorpa();
     document.querySelector("#tabelaKorpa").remove();
+    location.reload();
 })
 }
 BrisanjeKorpa("#BrisanjeSvega");
