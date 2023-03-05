@@ -234,28 +234,33 @@ function promena(){
     });
     });
     let dugmici = document.querySelectorAll('.korpa')
-        dugmici.forEach(dugme => {
-            dugme.addEventListener('click',function(e){
-                e.preventDefault();
-                if(dohvatanje("korpa") != null){
-                let korpa = dohvatanje("korpa");
-                let br = 0;
-                for(let i of korpa){
-                if(i.id == this.getAttribute("data-proizvodid")){
-                    br++;
-                }
-                }
-                if(br > 0){
-                    alert("Vec postoji")
-                }
-                else{
-                    korpa.push({"id": this.getAttribute("data-proizvodid"), "quantity":1});
-                    ubacivanje("korpa", korpa);
-                }
-                
-                }
-            })
-        })
+            console.log(dugmici);
+            
+                dugmici.forEach(dugme => {
+                    dugme.addEventListener('click',function(e){
+                        e.preventDefault();
+                        if(dohvatanje("korpa") != null){
+                        let korpa = dohvatanje("korpa");
+                        let br = 0;
+                        for(let i of korpa){
+                        if(i.id == this.getAttribute("data-proizvodid")){
+                            br++;
+                        }
+                        }
+                        if(br > 0){
+                            AddedToCartModal()
+                        }
+                        else{
+                            korpa.push({"id": this.getAttribute("data-proizvodid"), "quantity":1});
+                            ubacivanje("korpa", korpa);
+                            
+                            AddedToCartModal("dodat")
+                            
+                        }
+                        
+                        }
+                    })
+                })
 }
 function kreirajPadajucuListu(niz, idListe, labela, classDiv){
     let html = `<div class="form-group" id="red">
