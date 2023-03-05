@@ -738,7 +738,7 @@ function ispisProizvodaKorpa(){
         document.querySelector(".tableFooter").innerHTML="";
         document.querySelector(".tableHead").innerHTML="";
     }
-    else{
+    else if(korpa.length>0){
     for(let i of proizvodi){
         for(let j of korpa){
             if(i.id==j.id)
@@ -872,10 +872,8 @@ function brisanje(){
     
 }
 function BrisanjeKorpa(div){
-$(div).on("click",function(e){
-    e.preventDefault();
-    var prazno=[];
-    ubacivanje("korpa",prazno);
+$(div).on("click",function(){
+    ubacivanje("korpa",[]);
     document.querySelector("#tabelaKorpa").innerHTML="";
     
 })
