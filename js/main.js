@@ -712,7 +712,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc) {
 				var okModal = document.getElementById("okModal");
 				var modal = document.getElementById("myModal");
-                if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0)
+                if(window.location.pathname=="/MobileShop/checkout.html" && korpa==null)
                 {
                     console.log("nemogucea")
                 }
