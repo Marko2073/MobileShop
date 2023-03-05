@@ -867,18 +867,17 @@ function brisanje(){
     });
     localStorage.setItem("korpa", JSON.stringify(pom));
     
-    var korpa=dohvatanje("korpa");
-    if(korpa.length==0){
+    if(pom.length==0){
         
-    ubacivanje("korpa",[]);
     document.querySelector("#tabelaKorpa").innerHTML="";
     document.querySelector(".brojProizvoda").innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
     <span>0 Products</span></h4>`;
 
     }
     else{
+
         ispisProizvodaKorpa()
-        ispisBroj(korpa)
+        ispisBroj(pom)
     }
     
 }
