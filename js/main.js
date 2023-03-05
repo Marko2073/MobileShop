@@ -883,7 +883,8 @@ function brisanje(){
     
 }
 function BrisanjeKorpa(div){
-$(div).on("click",function(){
+$(div).on("click",function(e){
+    e.preventDefault();
     ubacivanje("korpa",[]);
     document.querySelector("#tabelaKorpa").innerHTML="";
     document.querySelector(".brojProizvoda").innerHTML=`<h4 class="mb-sm-4 mb-3">Your shopping cart contains:
