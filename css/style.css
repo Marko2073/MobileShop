@@ -3409,17 +3409,33 @@ header
   }
   
   
-  .modal-content {
+  .modal-content-uspesno {
     background-color: #fefefe;
     margin: 0px auto;
     padding: 20px;
     border: 1px solid #888;
     width: 40%;
   }
-  .modal-content p{
+  .modal-content-uspesno p{
     margin-bottom: 20px;
   }
-  .modal-content input{
+  .modal-content-uspesno input{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    width: 50%;
+    margin: 0px auto;
+  }  
+  .modal-content-greska {
+    background-color: #fefefe;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+  }
+  .modal-content-greska p{
+    margin-bottom: 20px;
+  }
+  .modal-content-greska input{
     margin-top: 20px;
     margin-bottom: 0px;
     width: 50%;
