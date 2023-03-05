@@ -712,14 +712,18 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc) {
 				var okModal = document.getElementById("okModal");
 				var modal = document.getElementById("myModal");
-
+                if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0)
+                {
+                    console.log("nemoguce")
+                }
+                else{
 				modal.style.display = "block";
 
 				okModal.onclick = function () {
 					modal.style.display = "none";
 					setTimeout("location.reload(true);", 0);
 				};
-
+            }
 			}
 		});
 }
