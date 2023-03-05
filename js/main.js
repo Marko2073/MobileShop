@@ -568,10 +568,8 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         }
 
         window.onload = function(){
-            setTimeout(() => {
-                var dugmici = document.querySelectorAll('.korpa')
             
-            
+            let dugmici = document.querySelectorAll('.korpa')
             console.log(dugmici);
             
                 dugmici.forEach(dugme => {
@@ -599,7 +597,6 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
                         }
                     })
                 })
-            }, 1000);
             let chcD=document.querySelectorAll(".brand input");
            
             chcD.forEach(c => {
