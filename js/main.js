@@ -875,6 +875,7 @@ function BrisanjeKorpa(div){
 $(div).on("click",function(){
     ubacivanje("korpa",[]);
     document.querySelector("#tabelaKorpa").innerHTML="";
+    ispisBroj(dohvatanje("korpa"));
     
 })
 }
