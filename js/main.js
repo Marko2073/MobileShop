@@ -536,7 +536,7 @@ function ispisProizvodaKorpa(){
     korpaDiv.innerHTML=html;
     }
 }
-if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" ||  window.location.pathname=="/MobileShop/product.html" )
+if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" ||  window.location.pathname=="/MobileShop/product.html")
 {
     
     ajaxCallBack("brend.json", function(rezultatBrend){
@@ -583,8 +583,10 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             })
         }
 
-        $(document).ready(function(){
-            let dugmici = document.querySelectorAll(".korpa");
+        $(window).on('load', function() {
+            
+            
+            let dugmici = document.querySelectorAll('.korpa')
             console.log(dugmici);
             
                 dugmici.forEach(dugme => {
