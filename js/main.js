@@ -296,7 +296,7 @@ function ispisPopust(nizZaIspis){
     let inputi = "";
 
     for(let obj of nizZaIspis){
-        if(obj.id == ""){
+        if(obj.id == 0){
             inputi += `<li>
         <input type="checkbox" class="checked" value="${obj.id}">
         <span class="span">Bez Popusta</span>
