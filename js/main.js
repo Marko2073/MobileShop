@@ -296,10 +296,18 @@ function ispisPopust(nizZaIspis){
     let inputi = "";
 
     for(let obj of nizZaIspis){
+        if(obj.id == ""){
+            inputi += `<li>
+        <input type="checkbox" class="checked" value="${obj.id}">
+        <span class="span">Bez Popusta</span>
+        </li>`
+        }
+        else{
         inputi += `<li>
         <input type="checkbox" class="checked" value="${obj.id}">
         <span class="span">${obj.ime}</span>
         </li>`
+    }
     }
 
     popust.innerHTML = inputi;
