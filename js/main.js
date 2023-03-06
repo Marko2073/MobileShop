@@ -584,7 +584,7 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         }
 
         $(window).on('load', function() {
-            // Vaš kod ovdje
+            
         
             
             let dugmici = document.querySelectorAll('.korpa')
