@@ -584,9 +584,6 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         }
 
         $(window).on('load', function() {
-            
-        
-            
             let dugmici = document.querySelectorAll('.korpa')
             console.log(dugmici);
             
