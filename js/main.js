@@ -584,7 +584,7 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         }
 
         $(window).on('load', function() {
-            let dugmici = document.querySelectorAll('.korpa')
+            let dugmici = $('.korpa');
             console.log(dugmici);
             
                 dugmici.forEach(dugme => {
