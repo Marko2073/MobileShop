@@ -206,11 +206,14 @@ function filtriranjeCena(proizvodi)
     }
     return sortiraniProizvodi;
 }
-function filtrirajPoNazivu(proizvodi){
-    let vrednostPolja = $("#search").val();
-    return proizvodi.filter(proizvod => proizvod.model.toLowerCase().includes(vrednostPolja.toLowerCase()));
-    
-}   
+function filtrirajPoNazivu(proizvodi) {
+    let vrednostPolja = $("#search").val().trim().toLowerCase();
+    if (vrednostPolja.length < 3) {
+      return proizvodi;
+    }
+    return proizvodi.filter(proizvod => proizvod.model.toLowerCase().includes(vrednostPolja));
+  }
+  
 function promena(){
     var proizvodi = dohvatanje("sviProizvodi");
     console.log(proizvodi);
