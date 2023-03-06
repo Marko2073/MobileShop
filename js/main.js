@@ -583,7 +583,7 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             })
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("load", function() {
             
             
             let dugmici = document.querySelectorAll('.korpa')
