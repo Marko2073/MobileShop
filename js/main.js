@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
         var element = document.getElementById("all");
         element.style.opacity = 1;
         element.style.transition = "opacity 1s ease-in-out";
-      }, 1000)
+      }, 1000);
 });
 ajaxCallBack("menu.json", function(rezultat){
     ispisNav(rezultat);
@@ -530,6 +530,8 @@ function ispisProizvodaKorpa(){
 }
 if(window.location.pathname=="/MobileShop/index.html" || window.location.pathname=="/MobileShop/" ||  window.location.pathname=="/MobileShop/product.html")
 {
+    setTimeout(() => {
+        
     
     ajaxCallBack("brend.json", function(rezultatBrend){
     ubacivanje("savBrend",rezultatBrend);
@@ -653,6 +655,7 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             });
         
         }
+    }, 1000);
 }
 if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathname=="/MobileShop/checkout.html" )
 {
