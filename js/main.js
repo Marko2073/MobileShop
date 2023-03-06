@@ -208,7 +208,7 @@ function filtriranjeCena(proizvodi)
 }
 function filtrirajPoNazivu(proizvodi) {
     let vrednostPolja = $("#search").val().trim().toLowerCase();
-    if (vrednostPolja.length < 3) {
+    if (vrednostPolja.length <= 3) {
       return proizvodi;
     }
     return proizvodi.filter(proizvod => proizvod.model.toLowerCase().includes(vrednostPolja));
