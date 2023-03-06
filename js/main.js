@@ -410,9 +410,9 @@ function ispisProizvoda(nizZaIspis){
                             <del>${obj.cena.stara}</del>
                         </div>
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                            <form action="" method="">
+                            
                                 <button class="button btn korpa" data-proizvodid="${obj.id}">Add to cart</button>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -447,9 +447,9 @@ function ispisProizvoda(nizZaIspis){
                             <del>${obj.cena.stara}</del>
                         </div>
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                            <form action="" method="">
+                            
                                 <button class="button btn korpa" data-proizvodid="${obj.id}">Add to cart</button>
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
