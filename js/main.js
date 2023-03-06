@@ -212,8 +212,7 @@ function filtrirajPoNazivu(proizvodi) {
       return proizvodi;
     }
     return proizvodi.filter(proizvod => proizvod.model.toLowerCase().includes(vrednostPolja));
-  }
-  
+}
 function promena(){
     var proizvodi = dohvatanje("sviProizvodi");
     console.log(proizvodi);
@@ -298,13 +297,13 @@ function ispisPopust(nizZaIspis){
     for(let obj of nizZaIspis){
         if(obj.id == 0){
             inputi += `<li>
-        <input type="checkbox" class="checked" value="${obj.id}">
+        <input type="checkbox" class="checked" value="${obj.id}" />
         <span class="span">Bez Popusta</span>
         </li>`
         }
         else{
         inputi += `<li>
-        <input type="checkbox" class="checked" value="${obj.id}">
+        <input type="checkbox" class="checked" value="${obj.id}" />
         <span class="span">${obj.ime}</span>
         </li>`
     }
@@ -318,7 +317,7 @@ function ispisCena(nizZaIspis){
 
     for(let obj of nizZaIspis){
         inputi += `<li>
-        <input type="checkbox" class="checked" value="${obj.cenaDo}">
+        <input type="checkbox" class="checked" value="${obj.cenaDo}" />
         <span class="span">Do: ${obj.cenaDo}€</span>
         </li>`
     }
@@ -388,7 +387,7 @@ function ispisProizvoda(nizZaIspis){
                     <div class="men-thumb-item text-center">
                         <div class="img-product">
                             <div class="discount-sticker">${New}</div>
-                            <img src="${obj.slike.slika1}" alt="${obj.slike.alt}" class="initial-img">
+                            <img src="${obj.slike.slika1}" alt="${obj.slike.alt}" class="initial-img" />
                         </div>
                         <div class="OpisProizvoda">
                             <div class="product-details">
@@ -425,7 +424,7 @@ function ispisProizvoda(nizZaIspis){
                 <div class="men-pro-item simpleCart_shelfItem">
                     <div class="men-thumb-item text-center">
                         <div class="img-product">
-                            <img src="${obj.slike.slika1}" alt="${obj.slike.alt}" class="initial-img">
+                            <img src="${obj.slike.slika1}" alt="${obj.slike.alt}" class="initial-img" />
                         </div>
                         <div class="OpisProizvoda">
                             <div class="product-details">
@@ -504,7 +503,7 @@ function ispisProizvodaKorpa(){
                 <td class="invert">${++idK}</td>
                 <td class="invert-image">
                     <a href="single.html">
-                        <img src="${i.slike.slika1}" alt="${i.slike.alt}" class="img-responsive">
+                        <img src="${i.slike.slika1}" alt="${i.slike.alt}" class="img-responsive" />
                     </a>
                 </td>
                 <td class="invert">
@@ -804,7 +803,6 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 
 				okModal.onclick = function () {
 					modal.style.display = "none";
-					// setTimeout("location.reload(true);", 0);
                     window.location.href = "https://marko2073.github.io/MobileShop/product.html";
 				};
             }
