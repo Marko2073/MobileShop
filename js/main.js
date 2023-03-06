@@ -584,8 +584,10 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
         }
 
         window.onload = function(){
-            
+            setTimeout(() => {
+                
             let dugmici = document.querySelectorAll('.korpa')
+            }, 1000);
             console.log(dugmici);
             
                 dugmici.forEach(dugme => {
