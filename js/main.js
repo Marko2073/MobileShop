@@ -583,7 +583,10 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             })
         }
 
-        document.addEventListener("load", function() {
+        $(window).on('load', function() {
+            
+            setTimeout(() => {
+                
             
             
             let dugmici = document.querySelectorAll('.korpa')
@@ -661,6 +664,7 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             });
             });
         
+        }, 2000);
         });
         
 }
