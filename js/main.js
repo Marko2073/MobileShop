@@ -583,12 +583,11 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             })
         }
 
-        window.onload = function(){
-            let dugmici = "";
-            setTimeout(() => {
-                
-            dugmici = document.querySelectorAll('.korpa')
-            }, 1000);
+        $(window).on('load', function() {
+            // Vaš kod ovdje
+        
+            
+            let dugmici = document.querySelectorAll('.korpa')
             console.log(dugmici);
             
                 dugmici.forEach(dugme => {
@@ -663,7 +662,8 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
             });
             });
         
-        }
+        });
+        
 }
 if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathname=="/MobileShop/checkout.html" )
 {
