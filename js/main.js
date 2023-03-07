@@ -797,7 +797,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 				};
             }
             }
-            else if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
+            else if(nameChc && emailChc && messageChc && checkBoxChc && selectChc && window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
                 var okModal = document.getElementById("okModal2");
 				var modal = document.getElementById("myModal2");
                 
