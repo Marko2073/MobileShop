@@ -889,7 +889,7 @@ function brisanje(){
     pom=proizvodiKorpe.filter((e)=>{
         return e.id != id;
     });
-    localStorage.setItem("korpa", JSON.stringify(pom));
+    ubacivanje("korpa",pom);
     
     if(pom.length==0){
         
