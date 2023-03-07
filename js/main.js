@@ -776,7 +776,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
     change.addEventListener('blur', checkChange);
 
 	//Submit check
-    var korpa=dohvatanje("korpa")
+    var korpa=dohvatanje("korpa");
 	addEventListener('submit', (e) => {
 			e.preventDefault();
 			checkName();
@@ -795,19 +795,20 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					modal.style.display = "none";
 					setTimeout("location.reload(true);", 0);
 				};
+                }
+                else if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
+                    var okModal = document.getElementById("okModal2");
+                    var modal = document.getElementById("myModal2");
+                    
+                    modal.style.display = "block";
+    
+                    okModal.onclick = function () {
+                        modal.style.display = "none";
+                        window.location.href = "https://marko2073.github.io/MobileShop/product.html";
+                    };
+                }
             }
-            }
-            else if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
-                var okModal = document.getElementById("okModal2");
-				var modal = document.getElementById("myModal2");
-                
-				modal.style.display = "block";
-
-				okModal.onclick = function () {
-					modal.style.display = "none";
-                    window.location.href = "https://marko2073.github.io/MobileShop/product.html";
-				};
-            }
+            
 			
 		});
 }
