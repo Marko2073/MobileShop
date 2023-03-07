@@ -266,7 +266,7 @@ function promena(){
 }
 function kreirajPadajucuListu(niz, idListe, labela, classDiv){
     let html = `<div class="form-group" id="red">
-        <label class="form-label">${labela}</label>
+		<h3 class="agileits-sear-head mb-3">${labela}</h3>
         <select class="form-select" id="${idListe}">
             <option value="0">Izaberite</option>`;
             for(let obj of niz){
@@ -298,7 +298,7 @@ function ispisPopust(nizZaIspis){
         if(obj.id == 0){
             inputi += `<li>
         <input type="checkbox" class="checked" value="${obj.id}" />
-        <span class="span">Bez Popusta</span>
+        <span class="span">No discount</span>
         </li>`
         }
         else{
@@ -362,7 +362,7 @@ function ispisProizvoda(nizZaIspis){
     let proizvod = "";
     if(nizZaIspis.length==0)
     {
-        proizvod+=`<h3 id="PorukaNema">Trenutno nema proizvoda za zadate kriterijume</h3>`
+        proizvod+=`<h3 id="PorukaNema">There are currently no products for the given criteria.</h3>`
     }
     else{
         for(let obj of nizZaIspis){
@@ -558,7 +558,7 @@ if(window.location.pathname=="/MobileShop/index.html" || window.location.pathnam
     })
     
     ajaxCallBack("sortiranje.json", function(rezultatSortiranje){
-        kreirajPadajucuListu(rezultatSortiranje, "ddlSort", "Sortiranje", "sortiranje", "sort");
+        kreirajPadajucuListu(rezultatSortiranje, "ddlSort", "Sort", "sortiranje", "sort");
     })
     if(window.location.pathname=="/MobileShop/index.html"){
         ajaxCallBack("proizvodi.json", function(rezultatProizvoda){
