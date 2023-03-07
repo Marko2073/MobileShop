@@ -784,7 +784,8 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			checkMessage();
 			checkCheckbox();
             checkChange();
-			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc && korpa.length!=0) {
+			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc) {
+                if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length>0 || window.location.pathname=="/MobileShop/contact.html"){
 				var okModal = document.getElementById("okModal");
 				var modal = document.getElementById("myModal");
                 
@@ -795,7 +796,8 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					setTimeout("location.reload(true);", 0);
 				};
             }
-            else{
+            }
+            else if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
                 var okModal = document.getElementById("okModal2");
 				var modal = document.getElementById("myModal2");
                 
