@@ -785,6 +785,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 			checkCheckbox();
             checkChange();
 			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc) {
+                console.log("usao");
                 if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length>0 || window.location.pathname=="/MobileShop/contact.html"){
 				var okModal = document.getElementById("okModal");
 				var modal = document.getElementById("myModal");
