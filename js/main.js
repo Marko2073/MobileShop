@@ -490,10 +490,12 @@ function ispisProizvodaKorpa(){
     var totalCena=0;
     if(korpa.length==0)
     {
+        document.querySelector(".checkout-left").innerHTML="";
         document.querySelector(".tableFooter").innerHTML="";
         document.querySelector(".tableHead").innerHTML="";
     }
     else if(korpa.length>0){
+        
     for(let i of proizvodi){
         for(let j of korpa){
             if(i.id==j.id)
