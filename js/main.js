@@ -799,6 +799,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
             }
             }
             else if(nameChc && emailChc && messageChc && checkBoxChc && selectChc && window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
+                console.log("usao2");
                 var okModal = document.getElementById("okModal2");
 				var modal = document.getElementById("myModal2");
                 
