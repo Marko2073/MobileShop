@@ -797,7 +797,6 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					setTimeout("location.reload(true);", 0);
 				};
             }
-            }
             else if(nameChc && emailChc && messageChc && checkBoxChc && selectChc && window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
                 console.log("usao2");
                 var okModal = document.getElementById("okModal2");
@@ -810,6 +809,8 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
                     window.location.href = "https://marko2073.github.io/MobileShop/product.html";
 				};
             }
+            }
+            
 			
 		});
 }
