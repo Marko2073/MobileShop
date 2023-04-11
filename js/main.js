@@ -78,6 +78,7 @@ function filtriranje(proizvodi, tip, filter)
             if(c.checked == true)
             {
                 nizBrendova.push(c.value)
+                ubacivanje("brend",c.value);
             }
            
             });
@@ -99,6 +100,7 @@ function filtriranje(proizvodi, tip, filter)
             if(c.checked == true)
             {
                 nizPopusta.push(c.value)
+                ubacivanje("popust",c.value);
             }
            
             });
@@ -119,6 +121,7 @@ function filtriranje(proizvodi, tip, filter)
             if(c.checked == true)
             {
                 nizOcena.push(c.value)
+                ubacivanje("ocena",c.value);
             }
            
             });
@@ -141,6 +144,7 @@ function filtriranjeCena(proizvodi)
         if(c.checked == true)
         {
             nizCena.push(c.value)
+            ubacivanje("cena",c.value);
         }      
     });
         if(nizCena.length == 0){
@@ -157,7 +161,7 @@ function filtriranjeCena(proizvodi)
  function sortiranje(nizProizvoda){
     let sortiraniProizvodi = [];
     let izbor = $("#ddlSort").val();
-
+    ubacivanje("sort",izbor);
     if(izbor == "0"){
         sortiraniProizvodi = nizProizvoda;
     }
@@ -208,6 +212,7 @@ function filtriranjeCena(proizvodi)
 }
 function filtrirajPoNazivu(proizvodi) {
     let vrednostPolja = $("#search").val().trim().toLowerCase();
+    ubacivanje("search",vrednostPolja);
     if (vrednostPolja.length <= 3) {
       return proizvodi;
     }
@@ -788,7 +793,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
             checkChange();
 			if (nameChc && emailChc && messageChc && checkBoxChc && selectChc) {
                 console.log("usao");
-                if(window.location.pathname=="/MobileShop/checkout.html" && korpa.length>0 || window.location.pathname=="/MobileShop/contact.html"){
+            if(window.location.pathname=="/MobileShop/checkout.php" && korpa.length>0){
 				var okModal = document.getElementById("okModal");
 				var modal = document.getElementById("myModal");
                 
@@ -799,7 +804,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 					setTimeout("location.reload(true);", 0);
 				};
             }
-            else if(nameChc && emailChc && messageChc && checkBoxChc && selectChc && window.location.pathname=="/MobileShop/checkout.html" && korpa.length==0){
+            else if(nameChc && emailChc && messageChc && checkBoxChc && selectChc && window.location.pathname=="/MobileShop/checkout.php" && korpa.length==0){
                 console.log("usao2");
                 var okModal = document.getElementById("okModal2");
 				var modal = document.getElementById("myModal2");
@@ -808,7 +813,7 @@ if(window.location.pathname=="/MobileShop/contact.html" || window.location.pathn
 
 				okModal.onclick = function () {
 					modal.style.display = "none";
-                    window.location.href = "https://marko2073.github.io/MobileShop/product.html";
+                    window.location.href = "shop.php";
 				};
             }
             }
