@@ -938,7 +938,4 @@ BrisanjeKorpa("#okModal");
 
 
 
-
-
-
 }
